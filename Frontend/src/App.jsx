@@ -1,14 +1,12 @@
-
-import './App.css'
-import Nav from './components/navigation/Nav'
+import "./App.css";
+import Main from "./companents/Main";
 
 function App() {
-
   return (
     <>
-      <Nav/>
+     <Main/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
