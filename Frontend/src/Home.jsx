@@ -1,5 +1,5 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+import { useEffect, useState } from 'react'
 
 export default function Home() {
     const [data, setData] = useState([])
@@ -15,18 +15,15 @@ export default function Home() {
     const Filter = (event) => {
         setRecords(data.filter(f => f.name.toLowerCase().includes(event.target.value)))
     }
-
   return (
     <div className='show'>
       <div className='bg-light'>
         <div className='bg-white shadow border'>
              < input type="text"  className='form-control'  onChange={Filter}></input>
-             
             <table className='table'>
                 <div>
                     <ul>
                         <li>owners</li>
-                        
                     </ul>
                 </div>
                 <tbody>
