@@ -1,6 +1,9 @@
 .navbar{
    max-width: 100%;
-   width: 1918px;
+//    width: 1918px;
+    overflow-x: hidden;
+    z-index: 1;
+    position: relative;
    .nav{
     width: 100%;
     height: 70px;
@@ -31,6 +34,9 @@
             border: 1px solid #afb8c1;
             border-radius: 7px;
             background: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             .bx-menu{
                 color: #57606a;
                 font-size: 25px;
@@ -69,6 +75,7 @@
             padding: 0 10px;
             border-radius: 5px  ;
             position: relative;
+            
             .bx-search{
                 color: #57606a;
             }
@@ -84,6 +91,7 @@
                 margin-right: 30px;
                 background: none;
                 text-align: center;
+                
               hr{
                 position: absolute;
                 right: 30px;
@@ -92,22 +100,25 @@
                 color: #afb8c1;
                 
               }
-              .bx-library-btn{
-                position: absolute;
-                right: 3px;
-                background: none;
-                width: 25px;
-                height: 25px;
-                // border: 1px solid;
-                font-size: 18px;
-                color: #57606a;
-                text-align: center;
-                
-              }
-              .bx-library-btn:hover{
-                background: rgb(236, 236, 236);
-                border-radius: 2px;
-              }
+            }
+            .bx-library-btn{
+              position: absolute;
+              right: 3px;
+              background: none;
+              width: 25px;
+              height: 25px;
+              // border: 1px solid;
+              font-size: 18px;
+              color: #57606a;
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              
+            }
+            .bx-library-btn:hover{
+              background: rgb(236, 236, 236);
+              border-radius: 2px;
             }
         }
     }
@@ -125,6 +136,9 @@
         align-items: center;
         justify-content: space-around;
         background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .bx-plus{
             font-size: 22px;
             color: #57606a;
@@ -146,6 +160,9 @@
         border: 1px solid #afb8c1;
         border-radius: 5px ;
         background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .bx-disc{
            font-size: 18px;
            color: #57606a;
@@ -161,6 +178,9 @@
         border: 1px solid #afb8c1;
         border-radius: 5px ;
         background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .bx-git-pull-request{
             font-size: 18px;
             color: #57606a;
@@ -177,6 +197,9 @@
         border: 1px solid #afb8c1;
         border-radius: 5px ;
         background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .bx-hdd{
             font-size: 18px;
             color: #57606a; 
@@ -188,7 +211,7 @@
      
     .profile-pic{
         height: 30px;
-        width: 45px;
+        width: 40px;
         border: 1px solid #afb8c1;
         border-radius: 50% ;
         background: none;

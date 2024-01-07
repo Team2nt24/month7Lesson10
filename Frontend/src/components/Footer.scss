@@ -1,0 +1,55 @@
+.footer{
+    width: 800px;
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    top: 680px;
+    display: flex;
+    .footer-logo{
+        width: 200px;
+        a{
+            margin: 0 5px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #6e8177;
+
+            text-decoration: none;
+        }
+        .fa-github{
+            color: #6e8177;
+            font-size: 25px;
+            text-decoration: none;
+            position: relative;
+            top: 3px;
+        }
+        a:hover{
+            margin: 0 5px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #656866;
+            text-decoration: none;
+        }
+        .fa-github:hover{
+            color: #656866;
+            font-size: 25px;
+            text-decoration: none;
+            position: relative;
+            top: 3px;
+        }
+    }
+    ul{
+        list-style: none;
+        // margin-top: 40px;
+        margin-left:110px;
+        li{
+            a{
+                color: #6e8177;
+                font-size: 12px;
+            }
+            a:hover{
+                color: #29359c;
+                font-size: 12px;
+            }
+        }
+    }
+}
