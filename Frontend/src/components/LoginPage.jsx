@@ -1,9 +1,8 @@
 
-import React from 'react'
 import { useGlobalContext } from '../context'
 
 export default function LoginPage() {
-    const {username, setUsername, errorMessage, handleUsernameChange, handleFormSubmit, signOut} = useGlobalContext()
+    const {username,  errorMessage, handleUsernameChange, handleFormSubmit, signOut} = useGlobalContext()
   return (
     <div>
          <h1>GitHub Login</h1>
