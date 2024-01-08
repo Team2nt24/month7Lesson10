@@ -8,7 +8,7 @@ export default function SidebarRight() {
   return (
     <div className='sidebarRight'>
       <h2>
-      SidebarLeft
+      SidebarRight
       </h2>
     </div>
   )
