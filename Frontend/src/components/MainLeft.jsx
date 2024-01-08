@@ -5,10 +5,11 @@ import { IoMdArrowDown } from "react-icons/io";
 
 
 function MainLeft() {
+  
     const [searchTerm, setSearchTerm] = useState("");
 
 
-    const filteredLists = lists.filter(
+    const filteredRepo = lists.filter(
         (item) =>
           item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           item.repo.toLowerCase().includes(searchTerm.toLowerCase())
@@ -41,7 +42,7 @@ function MainLeft() {
         </div>
 
         <div className="mainLeftLists">
-        {filteredLists.map((item, idx) => (
+        {filteredRepo.map((item, idx) => (
             <div className="item" key={idx}>
               <img
                 src="https://avatars.githubusercontent.com/u/133630500?v=4"
