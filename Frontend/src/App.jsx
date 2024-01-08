@@ -1,12 +1,15 @@
 
 import './App.css'
-import Nav from './components/navigation/Nav'
+import Main from './components/Main'
+import './styles/_mainLeft.scss';
+
 
 function App() {
 
   return (
     <>
-      <Nav/>
+      
+      <Main />
     </>
   )
 }
