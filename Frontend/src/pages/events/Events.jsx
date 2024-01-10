@@ -1,0 +1,13 @@
+import './Events.css'
+import Event from './Event'
+import { useGlobalContext } from '../../context'
+
+export default function Events() {
+  const {eventsList} = useGlobalContext()
+  return (
+    <div className='events__wrapper'>
+        {/* {eventsList.type} */}
+        {eventsList.map((item) => <Event key={item.id} {...item} />)}
+    </div>
+  )
+}

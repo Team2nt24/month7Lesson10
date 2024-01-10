@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700&display=swap');
+
+body {
+    font-family: 'Blinker', sans-serif;
+}
+.events__wrapper {
+    margin: 0 auto;
+    width: 40%;
+    /* border: 1px solid; */
+}
+.event__box {
+    border: 1px solid #808080;
+    border-radius: 5px;
+    margin: 25px 0;
+    padding: 20px;
+}
+.event__box-top {
+    display: flex;
+    /* align-items: ; */
+    gap: 12px;
+}
+.event__box-avatar {
+    width: 50px;
+    border-radius: 50%;
+}
+.event__box-top h3 {
+    font-weight: 600;
+    margin-top: 2px;
+    color: #1f2328;
+}
+.event__box-bottom {
+    display: flex;
+    background-color: #f6f8fa;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+.event__box-bottom img {
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.event__box-bottom a {
+    color: #1f2328;
+    font-size: 18px;
+    text-decoration: none;
+}
+.event__box-bottom a:hover {
+    color: #0000ff;
+    text-decoration: underline;
+}
