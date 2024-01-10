@@ -1,4 +1,6 @@
-import axios from "axios";
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
+
 import { useContext, useState, createContext, useEffect } from "react";
 import useFetch from "./components/UseFetch";
 
@@ -27,6 +29,7 @@ const AppPrivider = ({children}) => {
     const userData = useFetch(`https://api.github.com/users/${username}`)
   
 
+    const [eventsList, setEventsList] = useState([])
 
     const img = userData[0].avatar_url
 
@@ -36,9 +39,9 @@ const AppPrivider = ({children}) => {
       };
 
 
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-      };
+    // const handlePasswordChange = (e) => {
+    //     setPassword(e.target.value);
+    //   };
     
     const signOut = () => {
         setUsername('')
@@ -84,7 +87,6 @@ const AppPrivider = ({children}) => {
             setErrorMessage,
             data, setData,
             handleUsernameChange,
-            handlePasswordChange,
             signOut, setLogName,logName,
             img, 
             toggleSidebar,
@@ -92,7 +94,7 @@ const AppPrivider = ({children}) => {
             isOpenRight, setIsOpenRight,
             isOpenSearchModal, setIsOpenSearchModal,
             comandaPalette, setComandaPalette,
-            createNew, setCreateNew
+            createNew, setCreateNew,eventsList, setEventsList
 
         }}>
           {children}
