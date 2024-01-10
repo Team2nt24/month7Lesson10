@@ -1,5 +1,6 @@
 
-// import './App.css'
+import { useEffect, useState } from 'react'
+import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import LoginPage from './components/LoginPage'
@@ -11,7 +12,14 @@ import Footer from './components/Footer';
 import ComandaPlatte from './components/ComandaPlatte';
 import CreateNew from './components/CreateNew';
 
-function App() {
+
+import Events from './pages/events/Events'
+
+
+
+const url = 'https://api.github.com/users/Muh1isa/received_events'
+
+export default function App() {
       const {
         username,
         isOpen,
@@ -20,6 +28,23 @@ function App() {
         comandaPalette,
         createNew, 
       } = useGlobalContext();
+      const [eventsList, setEventsList] = useState([])
+
+  const fetchEvents = async () => {
+    try {
+      const resp = await fetch(url)
+      const data = await resp.json()
+      setEventsList(data)
+      console.log(data);
+    } catch (error) {
+      console.error(error);     
+    }
+  }
+
+  useEffect(() => {
+    fetchEvents()
+    
+  }, [])
   return (
     <>
     {!username ? null: <Navbar/>}
@@ -34,11 +59,8 @@ function App() {
       <Route path='/' element={username ? null:<LoginPage/>}/>
       {/* <Route path='/' element={username ? null:<Footer/>}/> */}
     </Routes>
+    <Events eventsList={eventsList} />
     <Footer/>
     
-    
     </>
-  )
-}
-
-export default App
+  )}
