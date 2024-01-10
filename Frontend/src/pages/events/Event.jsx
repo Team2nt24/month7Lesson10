@@ -1,7 +1,7 @@
 
 
-export default function Event({ actor, repo, created_at }) {
-
+export default function Event({ actor, repo }) {
+  
   return (
     <div className='event__box'>
       <div className='event__box-top'>

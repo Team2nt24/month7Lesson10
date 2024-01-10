@@ -26,9 +26,9 @@ const AppPrivider = ({children}) => {
     const [isOpenSearchModal, setIsOpenSearchModal ] = useState(false)
     const [comandaPalette, setComandaPalette] = useState(false)
     const [createNew, setCreateNew] = useState(false)
-    const userData = useFetch(`https://api.github.com/users/${username}`);
     const [eventsList, setEventsList] = useState([]);
-  
+    
+    const userData = useFetch(`https://api.github.com/users/${username}`);
 
 
     const img = userData[0].avatar_url
@@ -63,9 +63,16 @@ const AppPrivider = ({children}) => {
       }
     };
   
-    useEffect(() => {
-      fetchEvents();
-    }, []);
+
+
+      useEffect(() => {
+        if(username){
+            fetchEvents();
+        }
+      }, [eventsList]);
+   
+
+    
 
     
 
@@ -89,9 +96,7 @@ const AppPrivider = ({children}) => {
     //     }
     //   };
 
-      useEffect(() =>{
-
-      },[])
+      
     return(
         <AppContext.Provider value={{
             username,

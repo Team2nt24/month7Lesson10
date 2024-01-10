@@ -41,7 +41,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={username ? null : <LoginPage />} />
       </Routes>
-      <Events  />
+      {!username ? null : <Events  />}
       <Footer />
     </>
   );
