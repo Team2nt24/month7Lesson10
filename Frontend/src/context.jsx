@@ -1,4 +1,6 @@
-import axios from "axios";
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
+
 import { useContext, useState, createContext, useEffect } from "react";
 import useFetch from "./components/UseFetch";
 
@@ -24,7 +26,8 @@ const AppPrivider = ({children}) => {
     const [isOpenSearchModal, setIsOpenSearchModal ] = useState(false)
     const [comandaPalette, setComandaPalette] = useState(false)
     const [createNew, setCreateNew] = useState(false)
-    const userData = useFetch(`https://api.github.com/users/${username}`)
+    const userData = useFetch(`https://api.github.com/users/${username}`);
+    const [eventsList, setEventsList] = useState([]);
   
 
 
@@ -36,9 +39,9 @@ const AppPrivider = ({children}) => {
       };
 
 
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-      };
+    // const handlePasswordChange = (e) => {
+    //     setPassword(e.target.value);
+    //   };
     
     const signOut = () => {
         setUsername('')
@@ -48,6 +51,21 @@ const AppPrivider = ({children}) => {
     const toggleSidebar = () => {
       setIsOpen(!isOpen);
     };
+
+    const fetchEvents = async () => {
+      try {
+        const resp = await fetch(`https://api.github.com/users/${username}/received_events`);
+        const data = await resp.json();
+        setEventsList(data);
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchEvents();
+    }, []);
 
     
 
@@ -84,7 +102,6 @@ const AppPrivider = ({children}) => {
             setErrorMessage,
             data, setData,
             handleUsernameChange,
-            handlePasswordChange,
             signOut, setLogName,logName,
             img, 
             toggleSidebar,
@@ -92,7 +109,9 @@ const AppPrivider = ({children}) => {
             isOpenRight, setIsOpenRight,
             isOpenSearchModal, setIsOpenSearchModal,
             comandaPalette, setComandaPalette,
-            createNew, setCreateNew
+            createNew, setCreateNew,
+            eventsList, setEventsList,
+            fetchEvents
 
         }}>
           {children}

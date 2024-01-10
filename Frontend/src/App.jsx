@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -20,26 +20,15 @@ export default function App() {
     isOpenRight,
     isOpenSearchModal,
     comandaPalette,
-    createNew,
+    createNew
+    
   } = useGlobalContext();
-  const [eventsList, setEventsList] = useState([]);
 
-  const url = `https://api.github.com/users/${username}/received_events`;
+  
 
-  const fetchEvents = async () => {
-    try {
-      const resp = await fetch(url);
-      const data = await resp.json();
-      setEventsList(data);
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const url = `https://api.github.com/users/${username}/received_events`;
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
+  
   return (
     <>
       {!username ? null : <Navbar />}
@@ -51,9 +40,8 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={username ? null : <LoginPage />} />
-        {/* <Route path='/' element={username ? null:<Footer/>}/> */}
       </Routes>
-      <Events eventsList={eventsList} />
+      <Events  />
       <Footer />
     </>
   );
