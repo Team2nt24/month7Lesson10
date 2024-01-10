@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Events from './pages/events/Events'
 
-const url = 'https://api.github.com/users/Muh1isa/received_events'
+const url = 'https://api.github.com/users/ali/received_events'
 
 function App() {
 

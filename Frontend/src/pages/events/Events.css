@@ -49,3 +49,7 @@ body {
     color: #0000ff;
     text-decoration: underline;
 }
+.event__box-type {
+    margin-top: 5px;
+    color: #757575;
+}
