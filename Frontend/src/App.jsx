@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
@@ -15,8 +16,7 @@ import Events from './pages/events/Events'
 
 
 
-
-const url = 'https://api.github.com/users/Muh1isa/received_events'
+// const url = 'https://api.github.com/users/Muh1isa/received_events'
 
 function App() {
   const {
@@ -30,7 +30,7 @@ function App() {
 
   const fetchEvents = async () => {
     try {
-      const resp = await fetch(`https://api.github.com/users/BuilderSIA/received_events`)
+      const resp = await fetch(`https://api.github.com/users/${username}/received_events`)
       const data = await resp.json()
       setEventsList(data)
       console.log(data);
@@ -39,10 +39,20 @@ function App() {
     }
   }
 
+
+  let forEffect = [];
+  
+  
+  
   useEffect(() => {
-    fetchEvents()
-    
-  }, [])
+    {username?fetchEvents():null}
+    {if(!username){
+      forEffect = eventsList;
+    }else{
+      forEffect = [];
+    }
+  }
+  }, [forEffect])
 
 
       

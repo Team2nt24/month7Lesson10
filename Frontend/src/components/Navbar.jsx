@@ -1,12 +1,10 @@
-import React from 'react'
+
 import './Navbar.scss'
 import gitHubLogo from './../images/GitHub_Invertocat_Logo.svg'
 import { useGlobalContext } from '../context'
-import SidebarLeft from './SidebarLeft'
 
 const Navbar = () => {
     const {img,
-         toggleSidebar, 
          isOpen, 
          setIsOpen, 
          isOpenRight,
