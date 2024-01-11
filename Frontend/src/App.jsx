@@ -16,21 +16,20 @@ function App() {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setData(data);
             });
 
     }, []);
 
 
-    console.log('input', search);
+    // console.log('input', search);
 
 
   return (
     <>
-
-<Repository data={datas} search = {setSearch}/>
-<Fayl data={datas}/>
+    <Repository data={datas} search = {setSearch}/>
+    <Fayl data={datas}/>
     </>
   )
 }

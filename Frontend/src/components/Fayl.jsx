@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 export default function Fayl() {
 	const [repo, setRepo] = useState([]);
 	useEffect(() => {
-		fetch('https://api.github.com/users/hojiakbar/repos')
+		fetch('https://api.github.com/users/BuilderSIA/repos')
 			.then((response) => {
 				return response.json();
 			})
@@ -13,15 +13,14 @@ export default function Fayl() {
 			});
 	}, []);
 
-	console.log('Reppo', repo);
+	// console.log('Reppo', repo);
 	return (
-		<div>
-			<h2></h2>
-			{/* <p>{repo[0].id}</p> */}
-			{/* <h2>hello {repo[0].node_id} </h2>
-			<p>{repo[0].name}</p>
-			<p>{repo[0].full_name}</p>
-			<p>{repo[0].private}</p> */}
-		</div>
+		<>
+			{repo.map((item)=>{
+				<h2>
+					{item.name}
+				</h2>
+			})}
+		</>
 	);
 }
