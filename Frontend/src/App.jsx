@@ -7,14 +7,14 @@ import { IoMdArrowDown } from "react-icons/io";
 function App() {
   const { repo } = useGlobalContext();
   const [searchTerm, setSearchTerm] = useState("");
-  const [showAllRepos, setShowAllRepos] = useState(false); // Yangi o'zgaruvchilar
-  const [showMoreClicked, setShowMoreClicked] = useState(false); // Yangi o'zgaruvchilar
+  const [showAllRepos, setShowAllRepos] = useState(false); 
+  const [showMoreClicked, setShowMoreClicked] = useState(false); 
 
   const filteredRepo = repo.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const visibleRepos = showAllRepos ? filteredRepo : filteredRepo.slice(0, 3); // 3 ta repositori ko'rsatish uchun o'zgarish
+  const visibleRepos = showAllRepos ? filteredRepo : filteredRepo.slice(0, 3);
 
   const handleShowMore = () => {
     setShowAllRepos(!showAllRepos);

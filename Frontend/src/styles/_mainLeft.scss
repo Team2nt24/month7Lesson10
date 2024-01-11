@@ -1,13 +1,9 @@
-.box{
-    width: 360px;
-    
-    background-color: white;
-}
+
 
 .mainLeftContainer{
     
     width: 360px;
-    background-color: var(--second-color);
+    background-color: white;
     height: 560px;
     overflow: hidden;
     border-right: 1px solid var(--border-color);
@@ -50,7 +46,7 @@
 
             h2{
                 font-size: 16px;
-                color: var(--grey-color);
+                color: black;
             }
         }
 
@@ -72,13 +68,13 @@
 
                 h2{
                     font-size: 14px;
-                    color: var(--grey-color);
+                    color: black;
                 }
             }
 
             a{
                 text-decoration: none;
-                color: var(--grey-two-color);
+                color: black;
                 font-size: 12px;
                 margin: 14px 0 20px;
             }
@@ -100,7 +96,7 @@
 
                 h2{
                     font-size: 14px;
-                    color: var(--grey-color);
+                    color: black;
                 }
 
                 button{
@@ -123,7 +119,7 @@
                 width: 100%;
                 margin: 10px auto;
                 height: 34px;
-                background-color: #1b5296;
+                background-color: #a6c6ed;
                 font-size: 14px;
                 padding-left: 10px;
                 font-weight: bold;
