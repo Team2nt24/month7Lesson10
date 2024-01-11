@@ -8,7 +8,6 @@ export default function Fayl() {
 				return response.json();
 			})
 			.then((data) => {
-				console.log(data);
 				setRepo(data);
 			});
 	}, []);
