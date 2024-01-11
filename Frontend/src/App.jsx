@@ -33,7 +33,6 @@ function App() {
       const resp = await fetch(`https://api.github.com/users/${username}/received_events`)
       const data = await resp.json()
       setEventsList(data)
-      console.log(data);
     } catch (error) {
       console.error(error);     
     }
